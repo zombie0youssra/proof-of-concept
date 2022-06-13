@@ -6,7 +6,7 @@ Een data driven online concept voor een opdrachtgever
 Deze leertaak hoort bij sprint **Proof of Concept**. Dit is een autonomous leertaak die je individueel uitvoert voor een opdrachtgever.
 
 ## Briefing
-In de sprint Proof of Concept ga je een opdrachtgever helpen met een data-driven online concept. Je hebt dit jaar heel veel geleerd, in deze sprint laat je zien wat jij kan bereiken in 3 weken.
+In de sprint Proof of Concept ga je een opdrachtgever helpen met een data-driven online concept. Je hebt dit jaar heel veel geleerd. In deze sprint laat je zien wat jij kan bereiken in 3 weken.
 
 De focus van deze sprint ligt op werkwijze en samenwerken, en hoe je een opdrachtgever kan helpen met het uitwerken van een concept.
 
