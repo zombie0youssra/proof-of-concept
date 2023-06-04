@@ -8,7 +8,7 @@ Deze leertaak hoort bij sprint _Proof of Concept_. Dit is een leertaak die je me
 In het college S12W1-01-Sprintplanning-proof-of-cponcept krijg je uitleg over de opdracht en werkwijze.
 
 Bij deze leertaak hoort de deeltaak:
-- [Zero State](https://github.com/fdnd-task/zero-state)
+- [Zero State](https://github.com/fdnd-task/proof-of-concept-zero-state)
 
 
 ## Doel van deze opdracht
