@@ -40,7 +40,7 @@ De debriefing is noodzakelijk voor de opdrachtgever om na te gaan of duidelijk i
 
 Voordat je naar de briefing van de opdrachtgever gaat bereid je je voor op het gesprek zodat je weet welke vragen je moet stellen. Na de briefing stuur je de opdrachtgever een debriefing waarin je in eigen woorden opschrijft wat jij denkt dat de opdracht inhoudt.
 
-In de deeltaak [The Cient - Briefing/Debriefing](The Cient - Briefing/Debriefing) staat hoe je je goed kan voorbreiden op de briefing. 
+In de deeltaak [The Cient - Briefing/Debriefing](https://github.com/fdnd-task/the-client-briefing-debriefing/) staat hoe je je goed kan voorbreiden op de briefing. 
 
 
 ### Ontwerpen
