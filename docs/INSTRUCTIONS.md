@@ -7,6 +7,10 @@ Deze leertaak hoort bij sprint _Proof of Concept_. Dit is een leertaak die je me
 
 In het college S12W1-01-Sprintplanning-proof-of-cponcept krijg je uitleg over de opdracht en werkwijze.
 
+Bij deze leertaak hoort de deeltaak:
+- [Zero State](https://github.com/fdnd-task/zero-state)
+
+
 ## Doel van deze opdracht
 
 In de sprint Proof of Concept ga je een opdrachtgever helpen met een data-driven online concept. In deze mini-meesterproef laat je zien wat jij kan bereiken in 3 weken. Pas daarbij alle opgedane kennis en vaardigheden toe die je in semester 1 én semester 2 heb opgedaan.
