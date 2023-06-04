@@ -27,7 +27,7 @@ Op basis van een briefing ga je een opdrachtgever helpen met een data-driven onl
 
 * Donderdag 22 juni ga je weer op bezoek ij de opdrachtgever en ga je laten zien wat je/jullie hebben gemaakt.
 
-* Donderdag 6 juli organiseert FDNDN een EXPO voor bedrijven, vrienden en familie. Op de Expo laat je zien wat je het geleerd in het eerste jaar van de opleiding. 
+* Donderdag 6 juli organiseert FDNDN een EXPO voor bedrijven, vrienden en familie. Op de Expo laat je zien wat je hebt geleerd in het eerste jaar van de opleiding. 
 
 
 ### Analyseren
