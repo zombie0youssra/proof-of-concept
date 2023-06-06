@@ -1,0 +1,30 @@
+{
+  "name": "proof-of-concept",
+  "version": "1.0.0",
+  "description": "ontwerp voor werktijden.nl een in en uitklok webapp",
+  "main": "app.js",
+  "type": "module",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "ejs"
+  ],
+  "author": "Youssra Elmortai",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/zombie0youssra/proof-of-concept"
+  },
+  "homepage": "https://github.com/zombie0youssra/proof-of-concept#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  }
+}
