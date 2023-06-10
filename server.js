@@ -9,6 +9,9 @@ const app = express();
 
 const url = "";
 
+// api token
+// 300413 | DChxg1jKs61R6qWTEkik1NKzRBjvfhacJOWY6vGp;
+
 // Stel ejs in als template engine en geef de 'views' map door
 app.set("view engine", "ejs");
 app.set("views", "./views");
