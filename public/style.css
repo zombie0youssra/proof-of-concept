@@ -25,3 +25,28 @@ body{
 }
 
 /* index styling */
+
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 16%;
+    background-color: var(--sec-color);
+}
+
+header i{
+    margin-top: 0.3em;
+    color: var(--text-color);
+    font-size: 20px;
+}
+
+.menu{
+    display: none /*flex*/;
+    flex-direction: row;
+}
+
+.menu li {
+    list-style: none;
+    margin-left: 1em;
+ }
+
+
