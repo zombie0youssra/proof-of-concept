@@ -74,14 +74,25 @@ main{
     border-radius: 1.1em;
  }
 
-
-.employee-card{
-
-}
-
 .employee-card h3 {
     font-size: 17px;
 }
+
+.inside-card {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-left: 1em;
+}
+
+.ball{
+    margin-top: 0.7em;
+    height: 2em;
+    width: 2em;
+    background-color: var(--button-alt-color);
+    border-radius: 50%;
+}
+
 
 
 
