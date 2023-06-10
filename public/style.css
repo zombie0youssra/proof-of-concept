@@ -22,6 +22,8 @@
 body{
     background-color: var(--background-light-color);
     margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 /* index styling */
@@ -29,14 +31,22 @@ body{
 header {
     display: flex;
     flex-direction: row;
-    gap: 16%;
     background-color: var(--sec-color);
+}
+
+header img{
+    height: 1.5em;
+    width: auto;
 }
 
 header i{
     margin-top: 0.3em;
     color: var(--text-color);
     font-size: 20px;
+}
+
+header h1 {
+    margin-top: 0.3em;
 }
 
 .menu{
@@ -47,6 +57,32 @@ header i{
 .menu li {
     list-style: none;
     margin-left: 1em;
+}
+
+
+
+main{
+    align-self: center
+}
+
+.wrapper{
+    display: flex;
+    flex-direction:column;
+    margin-top: 2em;
+    background-color: lightgray;
+    width: 18em;
+    border-radius: 1.1em;
  }
+
+
+.employee-card{
+
+}
+
+.employee-card h3 {
+    font-size: 17px;
+}
+
+
 
 
