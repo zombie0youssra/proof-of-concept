@@ -44,7 +44,7 @@ Een web applicatie voor werkgevers en werknemers om  in en uit te klokken.
 2. Clone of download deze respository.
 3. Open hem in je `code-editor`.
 4. open de `terminal` en type `npm install`.
-5. Daarna door gerbruik van `npm start` krijg je een localhost link waar je de code live 
+5. Daarna door gerbruik van `npm start` kan je in een localhost starten.
 6. gebruik `gitignore` voor de modules zodat het niet allemaal op github komt te staan.
 7. Live zetten van je project kan met behulp van adaptable.io.
 
