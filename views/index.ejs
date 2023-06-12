@@ -12,8 +12,8 @@
       <% employee.forEach(employee=> { %>
         <div class="employee-card">
            <div class="inside-card">
+            <img src="<%= employee.avatar%>" alt="<%= employee.name %> profielfoto">
              <h3><%= employee.first_name +" "+ employee.last_name %></h3>
-             <p>afdeling</p>
           </div>
         </div> 
       <% }) %>

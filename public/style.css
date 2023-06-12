@@ -74,6 +74,10 @@ main{
     border-radius: 1.1em;
 }
 
+.employee-card{
+    margin-top: 1em;
+}
+
 .employee-card h3 {
     font-size: 17px;
 }
@@ -83,6 +87,13 @@ main{
     flex-direction: row;
     gap: 1em;
     margin-left: 1em;
+}
+
+.inside-card img{
+    width: auto;
+    height: 3em;
+    border: solid 3px var(--sec-color);
+    border-radius: 50%;
 }
 
 .button-wrapper{
