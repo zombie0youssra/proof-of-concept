@@ -85,14 +85,6 @@ main{
     margin-left: 1em;
 }
 
-.ball{
-    margin-top: 0.7em;
-    height: 2em;
-    width: 2em;
-    background-color: var(--button-alt-color);
-    border-radius: 50%;
-}
-
 .button-wrapper{
     gap: 2em;
     margin-left: 2em;
