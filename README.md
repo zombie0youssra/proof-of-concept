@@ -23,9 +23,30 @@ Een web applicatie voor werkgevers en werknemers om  in en uit te klokken.
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
+### tools 🍔
+- figma
+- goodnotes
+- visuel studio code
+- polyplane
+
+### gebruikte technieken 🍟
+- ejs
+- html
+- javascript
+- node.js
+- express
+- css
 
 ## Installatie
 <!-- Bij Instalatie staat hoe een andere developer aan jouw repo kan werken -->
+
+1. Om in de repository te werken en aanpassingen te maken moet je node.js downloaden versie: .
+2. Clone of download deze respository.
+3. Open hem in je `code-editor`.
+4. open de `terminal` en type `npm install`.
+5. Daarna door gerbruik van `npm start` kan je je code live zien in de localhost.
+6. gebruik `gitignore` voor de modules zodat het niet allemaal op github komt te staan.
+7. Live zetten van je project kan met behulp van adaptable.io.
 
 ## Bronnen
 
