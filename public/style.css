@@ -22,6 +22,7 @@
 body{
     background-color: var(--background-light-color);
     margin: 0;
+    font-family: Helvetica ;
     display: flex;
     flex-direction: column;
 }
