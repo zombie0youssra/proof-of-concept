@@ -75,11 +75,26 @@ header h1 {
 main{
     align-self: center
 }
-
 .wrapper{
     display: flex;
     flex-direction:column;
     margin-top: 2em;
+}
+
+.bedrijf-info{
+    margin-left: 2em;
+}
+.aanwezigheid{
+    display: flex;
+    flex-direction: row;
+    width: 10em;
+    gap: 7%;
+    background-color:lightgray;
+    border-radius: 0.6em;
+}
+
+.aanwezigheid span{
+    margin-left: 0.5em;
 }
 
 .employee-card{
