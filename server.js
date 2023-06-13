@@ -37,7 +37,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
 // Maak een route voor de index
-
+// index
 app.get("/", (request, response) => {
   console.log(request.query.employees);
   dataFetch(url).then((data) => {
@@ -45,6 +45,16 @@ app.get("/", (request, response) => {
     response.render("index",{employee:data});
   });
 });
+
+// employees
+app.get("/employees", (request, response) => {
+  console.log(request.query.employees);
+  dataFetch(url).then((data) => {
+    console.log(data)
+    response.render("employee",{employee:data});
+  });
+});
+
 
 
 
