@@ -84,17 +84,14 @@ main{
 .bedrijf-info{
     margin-left: 2em;
 }
+
 .aanwezigheid{
     display: flex;
     flex-direction: row;
     width: 10em;
-    gap: 7%;
+    gap: 6%;
     background-color:lightgray;
     border-radius: 0.6em;
-}
-
-.aanwezigheid span{
-    margin-left: 0.5em;
 }
 
 .employee-card{

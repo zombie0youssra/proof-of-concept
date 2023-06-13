@@ -46,15 +46,6 @@ app.get("/", (request, response) => {
   });
 });
 
-// employees
-app.get("/employees", (request, response) => {
-  console.log(request.query.employees);
-  dataFetch(url).then((data) => {
-    console.log(data)
-    response.render("employee",{employee:data});
-  });
-});
-
 
 
 
