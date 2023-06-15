@@ -32,6 +32,7 @@ body{
 header {
     display: flex;
     flex-direction: row;
+    gap: 30vw;
     background-color: var(--sec-color);
 }
 
@@ -52,7 +53,7 @@ header h1 {
 }
 
 .menu{
-    display: flex;
+    display: none;
     flex-direction: row;
 }
 
@@ -72,6 +73,7 @@ header h1 {
 }
 
 input{
+    display: none;
     height: 2em;
     width: auto;
 }
@@ -80,77 +82,43 @@ input{
 /* index styling */
 
 main{
-    align-self: center
+    padding: 2em;
 }
+
+.page-title{
+    margin-top: 3em;
+}
+
+.page-title h1{
+    font-size: 36px;
+    font-weight: 300;
+}
+
+.page-title p{
+    font-size: 22px;
+    font-weight: 400;
+}
+
+
+
 .wrapper{
-    display: flex;
-    flex-direction:column;
     margin-top: 2em;
 }
 
-.bedrijf-info{
-    margin-left: 2em;
-}
-
-.bedrijf-info h1{
-    font-size: 35px;
-}
-
-.aanwezigheid{
-    display: flex;
-    flex-direction: row;
-    width: 10em;
-    gap: 6%;
-    background-color:lightgray;
-    border-radius: 0.6em;
-    font-size: 24px;
-}
-
 .employee-card{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    margin-top: 0.5em;
-    background-color: lightgray;
-    height: 4.5em;
-    width: auto;
-    border-radius: 0.6em;
+    display: block;
+    padding: 1em 1em;
+    background-color: #fff;
+    border: 1px solid #ddd;
 }
 
-.employee-card h3 {
-    font-size: 20px;
-}
-
-.inside-card {
+.inside-card{
     display: flex;
     flex-direction: row;
-    gap: 1em;
-    margin-left: 1em;
 }
 
 .inside-card img{
-    width: auto;
-    height: 3em;
-    border: solid 3px var(--sec-color);
-    border-radius: 50%;
+ height: 5em;
+ width: auto;
+ margin-right: 1em;
 }
-
-.button-wrapper{
-    display: flex;
-    gap: 1em;
-    margin-left: 0.6em;
-    margin-top: 1em;
-}
-
-.button-wrapper button{
-    background-color: var(--button-alt-color);
-    border: none;
-    font-size: 24px;
-    border-radius: 0.5em ;
-    color:var(--text-color);
-}
-
-
-
-
-
