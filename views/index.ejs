@@ -10,10 +10,6 @@
 
     <div class="afdeling-wrapper">
       <h2> Werktijden B.V.</h2>
-       <label class="switch">
-         <input type="checkbox">
-         <span class="slider"></span>
-      </label>
     </div>
 
   
@@ -24,8 +20,8 @@
      <div class="wrapper">
       <% employee.forEach(employee=> { %>
         <div class="employee-card">
+          <img src="<%= employee.avatar%>" alt="<%= employee.name %> profielfoto">
            <div class="inside-card">
-            <img src="<%= employee.avatar%>" alt="<%= employee.name %> profielfoto">
              <h2><%= employee.first_name +" "+ employee.last_name %></h2>
           </div>
         </div> 
