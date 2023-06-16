@@ -101,24 +101,39 @@ main{
 
 
 
+
 .wrapper{
-    margin-top: 2em;
+    margin-top: 3em;
+    overflow: hidden;
+    border: solid 1px #ddd;
+    border-radius: 0.5em;
 }
 
 .employee-card{
     display: block;
     padding: 1em 1em;
-    background-color: #fff;
+    background-color: var(--text-color);
     border: 1px solid #ddd;
 }
 
 .inside-card{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    gap: 10%;
 }
 
 .inside-card img{
  height: 5em;
  width: auto;
  margin-right: 1em;
+}
+
+.inside-card p{
+    font-size: 20px;
+    color: var(--text-color);
+    background-color:var(--button-alt-color);
+    height: 1em;
+    padding: 0.5em ;
+    border-radius: 0.5em;
 }
