@@ -82,6 +82,9 @@ input{
 /* index styling */
 
 main{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
     padding: 2em;
 }
 
@@ -90,16 +93,89 @@ main{
 }
 
 .page-title h1{
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 300;
 }
 
 .page-title p{
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 400;
 }
 
+.afdeling-wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.afdeling-wrapper h2{
+    font-size: 27px;
+    font-weight: 500;
+}
+
 /* button */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 10em;
+    height: 34px;
+}
+
+.switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--button-alt-color);
+    transition: .4s;
+    border-radius: 0.5em;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color:var(--button-border-color);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #1e1f20;
+}
+
+input:checked+.slider:before {
+    transform: translateX(7.9em);
+}
+
+.slider:after {
+    content: 'ingeklokt';
+    color: white;
+    display: block;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    font-size: 22px;
+}
+
+input:checked+.slider:after {
+    content: 'uitgeklokt';
+}
 
 
 .wrapper{
