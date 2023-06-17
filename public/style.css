@@ -176,7 +176,7 @@ main{
 
 .close:hover,
 .close:focus {
-    color:rgb(21, 82, 48);
+    color:#059669;
     text-decoration: none;
     cursor: pointer;
 }
@@ -190,4 +190,9 @@ main{
 
 .popup-content label{
     font-size: 24px;
+}
+
+.form-card{
+    background-color: #076e4e;
+    color: var(--text-color);
 }
