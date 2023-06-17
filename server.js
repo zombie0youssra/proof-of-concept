@@ -46,6 +46,47 @@ app.get("/", (request, response) => {
   });
 });
 
+// inklok magic
+
+app.post("/inklokken", async (req, res) => {
+	const departmentId = Number(req.body.department)
+	const employeeId = Number(req.body.employee)
+
+	const postData = {
+		"employee_id": employeeId,
+		"department_id": departmentId,
+	}
+
+	postJson("https://api.werktijden.nl/2/timeclock/clockin", postData)
+	res.redirect("/")
+})
+
+app.get("/inklokken", async (req, res) => {
+	const departments = await dataFetch("https://api.werktijden.nl/2/departments")
+	const employees = await dataFetch("https://api.werktijden.nl/2/employees")
+  
+	res.render("inklokken", {title:"Inklokken", departments, employees})
+})
+
+app.post("/uitklokken", async (req, res) => {
+	const departmentId = Number(req.body.department)
+	const employeeId = Number(req.body.employee)
+
+	const postData = {
+		"employee_id": employeeId,
+		"department_id": departmentId,
+	}
+
+	postJson("https://api.werktijden.nl/2/timeclock/clockout", postData)
+	res.redirect("/")
+})
+
+app.get("/uitklokken", async (req, res) => {
+	const departments = await dataFetch("https://api.werktijden.nl/2/departments")
+	const employees = await dataFetch("https://api.werktijden.nl/2/employees")
+
+	res.render("uitklokken", {title:"Uitklokken", departments, employees})
+})
 
 
 
