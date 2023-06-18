@@ -1,4 +1,45 @@
+:root {
+    --main-bg: #F3F4F6;
+    --primary: #059669;
+    --primary-text: #FFFFFF;
+    --light-text: #374151;
+    --light-border: #DDDDDD;
+    --container-bg: #FFFFFF;
+    --secondary: #960505;
 
+    --container-radius: 8px;
+    --btn-radius: 6px;
+
+    --container-shadow: 0px 1px 2px 0px #37415125;
+}
+
+/* head styling */
+
+body{
+    margin: 0;
+}
+header{
+    background-color: var(--primary);
+    display: flex;
+    flex-direction: row;
+}
+
+.menu{
+    display: flex;
+    flex-direction: row;
+}
+
+.menu li{
+    list-style: none;
+    margin-left: 1em;
+}
+
+.menu a{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: var(--primary-text);
+}
 
 /* index styling */
 main{
@@ -33,13 +74,14 @@ main{
     top: 1em;
     width: 2px;
     height: 80px;
-    background-color: yellow;
+    background-color: rgb(21, 140, 67);
 }
 
 .employee-card img{
     height: 100px;
     width: auto;
     margin-top: 0.5em;
+    margin-bottom: 1em;
     margin-left: 1em;
 }
 
