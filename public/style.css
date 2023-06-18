@@ -84,7 +84,7 @@ input{
 main{
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
+    align-items: center;
     padding: 2em;
 }
 
@@ -116,6 +116,7 @@ main{
 
 
 .wrapper{
+    align-items: center;
     margin-top: 3em;
     overflow: hidden;
     border: solid 2px #ddd;
@@ -124,7 +125,8 @@ main{
 
 .employee-card{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    width: 30em;
     padding: 1em 1em;
     background-color: var(--text-color);
     border-bottom: 1px solid #ddd;
@@ -136,9 +138,23 @@ main{
     margin-right: 1em;
 }
 
+.stripe{
+    top: 0.5em;
+    margin-right: 1em;
+    position: relative;
+    height: 4em;
+    width: 0.2em;
+    background-color: #059669;
+}
+
 .inside-card{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: initial;
     gap: 5%;
+}
+
+.inside-card h2{
+    font-weight: 500;
+    font-size: 25px;
 }

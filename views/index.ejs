@@ -12,23 +12,21 @@
       <h2> Werktijden B.V.</h2>
     </div>
 
-  
-
-   
-
 
      <div class="wrapper">
       <% employee.forEach(employee=> { %>
         <div class="employee-card">
           <img src="<%= employee.avatar%>" alt="<%= employee.name %> profielfoto">
+          <div class="stripe">
+          </div>
            <div class="inside-card">
              <h2><%= employee.first_name +" "+ employee.last_name %></h2>
+             <span>time</span>
           </div>
         </div> 
       <% }) %>
      </div> 
 
-     <button onclick="openPopup()">Open Formulier</button>
 
 
         
