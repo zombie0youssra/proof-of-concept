@@ -1,167 +1,48 @@
-:root {
-    /* text colors */
-    --text-color: #FFFFFF;
-    --text-color-dark: #374151;
-
-    /* secundarie color */
-    --sec-color: #059669;
-
-    /* background */
-    --background-light-color: #F3F4F6;
-    --background-dark-color: #212024;
-
-    /* buttons */
-    --button-light-color: #FFFFFF;
-    --button-alt-color: #059669;
-
-    /* button border color */
-    --button-border-color:#374151;
-
-}
-
-body{
-    background-color: var(--background-light-color);
-    margin: 0;
-    font-family: Helvetica ;
-    display: flex;
-    flex-direction: column;
-}
-
-/* head styling */
-
-header {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    background-color: var(--sec-color);
-}
-
-header img{
-    margin-top: 1em;
-    height: 2.5em;
-    width: auto;
-}
-
-header i{
-    margin-top: 0.3em;
-    color: var(--text-color);
-    font-size: 30px;
-}
-
-header h1 {
-    margin-top: 0.3em;
-}
-
-.menu{
-    display: flex;
-    flex-direction: row;
-}
-
-.menu i{
-    position: relative;
-    font-size: 24px;
-    top: -0.3em;
-}
-
-.menu li {
-    list-style: none;
-    padding: 1em 0.5em;
-    margin-left: 1em;
-}
-
-.menu a {
-    display: flex;
-    flex-direction: row;
-    gap:0.5em;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 20px;
-}
-
-input{
-    display: none;
-    height: 2em;
-    width: auto;
-}
 
 
 /* index styling */
-
 main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 2em;
-}
-
-.page-title{
-    margin-top: 2em;
-}
-
-.page-title h1{
-    font-size: 40px;
-    font-weight: 300;
-}
-
-.page-title p{
-    font-size: 25px;
-    font-weight: 400;
-}
-
-.afdeling-wrapper{
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
 }
-
-.afdeling-wrapper h2{
-    font-size: 27px;
-    font-weight: 500;
-}
-
-
 
 .wrapper{
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-top: 3em;
-    overflow: hidden;
-    border: solid 2px #ddd;
-    border-radius: 0.5em;
+}
+
+.card-wrapper{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    border-radius: 8px;
+    width: 80vw;
 }
 
 .employee-card{
     display: flex;
-    flex-direction:row;
-    width: 30em;
-    padding: 1em 1em;
-    background-color: var(--text-color);
-    border-bottom: 1px solid #ddd;
-}
-
-.employee-card img {
-    height: 5em;
-    width: auto;
-    margin-right: 1em;
+    flex-direction: row;
+    gap: 1em;
+    border-bottom: solid 1px gray;
 }
 
 .stripe{
-    top: 0.5em;
-    margin-right: 1em;
     position: relative;
-    height: 4em;
-    width: 0.2em;
-    background-color: #059669;
+    top: 1em;
+    width: 2px;
+    height: 80px;
+    background-color: yellow;
+}
+
+.employee-card img{
+    height: 100px;
+    width: auto;
+    margin-top: 0.5em;
+    margin-left: 1em;
 }
 
 .inside-card{
-    position: relative;
-    top: -0.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: initial;
-}
-
-.inside-card h2{
-    font-weight: 500;
-    font-size: 25px;
+    display: inline;
 }
