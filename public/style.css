@@ -32,7 +32,7 @@ body{
 header {
     display: flex;
     flex-direction: row;
-    gap: 30vw;
+    width: 100vw;
     background-color: var(--sec-color);
 }
 
@@ -53,20 +53,26 @@ header h1 {
 }
 
 .menu{
-    display: none;
+    display: flex;
     flex-direction: row;
 }
 
 .menu i{
+    position: relative;
     font-size: 24px;
+    top: -0.3em;
 }
 
 .menu li {
     list-style: none;
+    padding: 1em 0.5em;
     margin-left: 1em;
 }
 
 .menu a {
+    display: flex;
+    flex-direction: row;
+    gap:0.5em;
     color: var(--text-color);
     text-decoration: none;
     font-size: 20px;
@@ -89,7 +95,7 @@ main{
 }
 
 .page-title{
-    margin-top: 3em;
+    margin-top: 2em;
 }
 
 .page-title h1{
@@ -148,10 +154,11 @@ main{
 }
 
 .inside-card{
+    position: relative;
+    top: -0.5em;
     display: flex;
     flex-direction: column;
     align-items: initial;
-    gap: 5%;
 }
 
 .inside-card h2{
