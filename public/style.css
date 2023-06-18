@@ -17,6 +17,7 @@
 
 body{
     margin: 0;
+    font-family: Helvetica ;
 }
 header{
     background-color: var(--primary);
@@ -42,11 +43,118 @@ header{
 }
 
 /* index styling */
+
+
 main{
     padding: 2em;
     display: flex;
     flex-direction: column;
 }
+
+/* button */
+.afdeling-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+.toggler {
+    align-items: center;
+}
+
+.toggler input {
+    display: none;
+}
+
+.toggler label {
+    display: block;
+    position: relative;
+    width: 10em;
+    height: 36px;
+    border: 1px solid var(--light-border);
+    border-radius: var(--container-radius);
+    background: var(--main-bg);
+    cursor: pointer;
+}
+
+.toggler label::after {
+    display: block;
+    border-radius: 100%;
+    background-color: var(--primary);
+    content: '';
+    animation-name: toggler-size;
+    animation-duration: 0.15s;
+    animation-timing-function: ease-out;
+    animation-direction: forwards;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+}
+
+.toggler label::after,
+.toggler label .toggler-on,
+.toggler label .toggler-off {
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    width: 26px;
+    height: 26px;
+    transform: translateY(-50%) translateX(-50%);
+    transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+}
+
+.toggler input:checked+label::after,
+.toggler input:checked+label .toggler-on,
+.toggler input:checked+label .toggler-off {
+    left: 75%;
+}
+
+.toggler input:checked+label::after {
+    background-color: var(--secondary);
+    animation-name: toggler-size2;
+}
+
+.toggler .toggler-on,
+.toggler .toggler-off {
+    opacity: 1;
+    z-index: 2;
+}
+
+.toggler input:checked+label .toggler-off,
+.toggler input:not(:checked)+label .toggler-on {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+@keyframes toggler-size {
+
+    0%,
+    100% {
+        width: 26px;
+        height: 26px;
+    }
+
+    50% {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@keyframes toggler-size2 {
+
+    0%,
+    100% {
+        width: 26px;
+        height: 26px;
+    }
+
+    50% {
+        width: 20px;
+        height: 20px;
+    }
+}
+
 
 .wrapper{
     display: flex;
