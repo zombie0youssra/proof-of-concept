@@ -6,17 +6,20 @@ import "dotenv/config";
 // Maak een nieuwe express app aan
 const app = express();
 
+// base api url
+const baseUrl = "https://api.werktijden.nl/2"
+
 // get info form api
-const url = "https://api.werktijden.nl/2/employees";
+const url = `${baseUrl}/employees`;
 
 // om inkloktijden op te vragen
-const punchesUrl ="https://api.werktijden.nl/2/timeclock/punches";
+const punchesUrl =  `${baseUrl}/timeclock/punches`;
 
 // voor posten van inkloktijden
-const clockinUrl ="https://api.werktijden.nl/2/timeclock/clockin";
+const clockinUrl = `${baseUrl}/timeclock/clockin`;
 
 // voor posten van uitkloktijden
-const clockoutUrl="https://api.werktijden.nl/2/timeclock/clockout";
+const clockoutUrl= `${baseUrl}/timeclock/clockout`;
 
 
 
@@ -27,7 +30,7 @@ const options = {
   }
 };
 
-
+// fetch 
 async function dataFetch(url) {
   const data = await fetch(url, options)
     .then((response) => response.json())
@@ -39,12 +42,15 @@ async function dataFetch(url) {
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
-// Stel afhandeling van formulieren inzx
+// Stel afhandeling van formulieren 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // Gebruik de map 'public' voor statische resources
 app.use(express.static("public"));
+
+
+
 
 // Maak een route voor de index
 // index
@@ -55,7 +61,35 @@ app.get("/", (request, response) => {
     response.render("index",{employee:data});
   });
 });
+ 
+// index post functie voor inklokken en uitklokken van medewerkers
+app.post("/", (request, response) => {
+  const employeeId = request.body.employeeId;
+  const departmentId = request.body.departmentId;
 
+  // Inklokken
+  postJson(clockinUrl, { employee_id: employeeId, department_id: departmentId })
+    .then((data) => {
+      console.log(data);
+      // Doe iets met de response na het inklokken
+
+      // Uitklokken
+      postoutJson(clockoutUrl, { employee_id: employeeId, department_id: departmentId })
+        .then((data) => {
+          console.log(data);
+          // Doe iets met de response na het uitklokken
+          response.redirect("/");
+        })
+        .catch((error) => {
+          console.error(error);
+          response.redirect("/");
+        });
+    })
+    .catch((error) => {
+      console.error(error);
+      response.redirect("/");
+    });
+});
 
 // Stel het poortnummer in waar express op gaat luisteren
 app.set("port", process.env.PORT || 8000);
@@ -69,9 +103,10 @@ app.listen(app.get("port"), function () {
 
 
 // post json
-
-export async function postJson(url, body) {
-  return await fetch(url, {
+// clockin
+// voor het posten moet ik de employee_id en department_id(#departmentnummer)
+export async function postJson(clockinUrl, body) {
+  return await fetch(clockinUrl, {
     method: "post",
     body: JSON.stringify(body),
     headers: { "Content-Type": "application/json" },
@@ -79,3 +114,14 @@ export async function postJson(url, body) {
     .then((response) => response.json())
     .catch((error) => error);
 }
+// post de uitkloktijden
+export async function postoutJson(clockoutUrl, body) {
+  return await fetch(clockoutUrl, {
+    method: "post",
+    body: JSON.stringify(body),
+    headers: { "Content-Type": "application/json" },
+  })
+    .then((response) => response.json())
+    .catch((error) => error);
+}
+
