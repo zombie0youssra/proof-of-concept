@@ -85,8 +85,6 @@ app.post("/clockin", async (request, response) => {
 
   console.log(clockInData);
 
-  // Stuur een reactie terug naar de client, bijvoorbeeld een succesmelding
-  response.json({ message: "Clock in successful" });
 });
 
 // Clock out
@@ -100,8 +98,6 @@ app.post("/clockout", async (request, response) => {
 
   console.log(clockOutData);
 
-  // Stuur een reactie terug naar de client, bijvoorbeeld een succesmelding
-  response.json({ message: "Clock out successful" });
 });
 
 

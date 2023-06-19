@@ -27,7 +27,7 @@
           </div>
            <div class="inside-card">
              <h2><%= employee.first_name +" "+ employee.last_name %></h2>
-             <span>time</span>
+             <p class="start-time"><%- punches. %> - <%- punches.TimePastClockIn %></p>
           </div>
         </div> 
       <% }) %>
@@ -56,7 +56,6 @@
       <option value="<%= employee.id %>"><%= employee.first_name %> <%= employee.last_name %></option>
     <% }); %>
   </select>
-
   <label for="departmentId">Department ID:</label>
   <input type="text" id="departmentId" name="departmentId" required>
 
