@@ -27,7 +27,8 @@
           </div>
            <div class="inside-card">
              <h2><%= employee.first_name +" "+ employee.last_name %></h2>
-             <p class="start-time"><%- punches. %> - <%- punches.TimePastClockIn %></p>
+             <p>Ingeklokt op: <%= clockInData.timestamp %> -<%= calculateTimeSince(clockInData.timestamp) %></p>
+
           </div>
         </div> 
       <% }) %>

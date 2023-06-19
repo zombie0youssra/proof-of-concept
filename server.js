@@ -83,8 +83,20 @@ app.post("/clockin", async (request, response) => {
     department_id: departmentId
   });
 
-  console.log(clockInData);
-
+  if (clockInData.errors) {
+    const { departmentId: departmentError, start: startError, end: endError } = clockInData.errors;
+    response.render("index", {
+      clockInData: null,
+      clockOutData: null,
+      clockInError: departmentError[0] || "",
+      clockOutError: "",
+      startError: startError[0] || "",
+      endError: endError[0] || ""
+    });
+  } else {
+    console.log(clockInData);
+    response.redirect("/");
+  }
 });
 
 // Clock out
@@ -96,9 +108,22 @@ app.post("/clockout", async (request, response) => {
     department_id: departmentId
   });
 
-  console.log(clockOutData);
-
+  if (clockOutData.errors) {
+    const { departmentId: departmentError, start: startError, end: endError } = clockOutData.errors;
+    response.render("index", {
+      clockInData: null,
+      clockOutData: null,
+      clockInError: "",
+      clockOutError: departmentError[0] || "",
+      startError: startError[0] || "",
+      endError: endError[0] || ""
+    });
+  } else {
+    console.log(clockOutData);
+    response.redirect("/");
+  }
 });
+
 
 
 
