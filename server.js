@@ -7,8 +7,18 @@ import "dotenv/config";
 const app = express();
 
 // get info form api
-
 const url = "https://api.werktijden.nl/2/employees";
+
+// om inkloktijden op te vragen
+const punchesUrl ="https://api.werktijden.nl/2/timeclock/punches";
+
+// voor posten van inkloktijden
+const clockinUrl ="https://api.werktijden.nl/2/timeclock/clockin";
+
+// voor posten van uitkloktijden
+const clockoutUrl="https://api.werktijden.nl/2/timeclock/clockout";
+
+
 
 const options = {
   method: "GET",
@@ -45,49 +55,6 @@ app.get("/", (request, response) => {
     response.render("index",{employee:data});
   });
 });
-
-// inklok magic
-
-app.post("/inklokken", async (req, res) => {
-	const departmentId = Number(req.body.department)
-	const employeeId = Number(req.body.employee)
-
-	const postData = {
-		"employee_id": employeeId,
-		"department_id": departmentId,
-	}
-
-	postJson("https://api.werktijden.nl/2/timeclock/clockin", postData)
-	res.redirect("/")
-})
-
-app.get("/inklokken", async (req, res) => {
-	const departments = await dataFetch("https://api.werktijden.nl/2/departments")
-	const employees = await dataFetch("https://api.werktijden.nl/2/employees")
-  
-	res.render("inklokken", {title:"Inklokken", departments, employees})
-})
-
-app.post("/uitklokken", async (req, res) => {
-	const departmentId = Number(req.body.department)
-	const employeeId = Number(req.body.employee)
-
-	const postData = {
-		"employee_id": employeeId,
-		"department_id": departmentId,
-	}
-
-	postJson("https://api.werktijden.nl/2/timeclock/clockout", postData)
-	res.redirect("/")
-})
-
-app.get("/uitklokken", async (req, res) => {
-	const departments = await dataFetch("https://api.werktijden.nl/2/departments")
-	const employees = await dataFetch("https://api.werktijden.nl/2/employees")
-
-	res.render("uitklokken", {title:"Uitklokken", departments, employees})
-})
-
 
 
 // Stel het poortnummer in waar express op gaat luisteren

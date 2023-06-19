@@ -48,6 +48,7 @@ header{
 main{
     padding: 2em;
     display: flex;
+    margin-top: 2em;
     flex-direction: column;
 }
 
@@ -82,7 +83,8 @@ main{
     display: block;
     border-radius: 100%;
     background-color: var(--primary);
-    content: '';
+    content: 'in';
+    color: var(--primary-text);
     animation-name: toggler-size;
     animation-duration: 0.15s;
     animation-timing-function: ease-out;
@@ -112,6 +114,8 @@ main{
 .toggler input:checked+label::after {
     background-color: var(--secondary);
     animation-name: toggler-size2;
+    content: 'uit';
+    color: var(--primary-text);
 }
 
 .toggler .toggler-on,
@@ -195,4 +199,20 @@ main{
 
 .inside-card{
     display: inline;
+}
+
+.button-wrapper{
+    margin-top: 2em;
+}
+
+.button-wrapper button{
+    height: 2em;
+    width: auto;
+    align-content: center;
+    color: var(--primary-text);
+    font-size: 24px;
+    margin-left: 1em;
+    background-color: var(--primary);
+    border-radius: var(--container-radius);
+    border: none;
 }
