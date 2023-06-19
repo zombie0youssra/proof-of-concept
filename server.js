@@ -22,19 +22,30 @@ const clockinUrl = `${baseUrl}/timeclock/clockin`;
 const clockoutUrl= `${baseUrl}/timeclock/clockout`;
 
 
-
 const options = {
-  method: "GET",
   headers: {
-    Authorization: `Bearer ${process.env.APIKEY}`
+    Authorization: `Bearer ${process.env.APIKEY}`,
+    "Content-Type": "application/json"
   }
 };
 
-// fetch 
-async function dataFetch(url) {
-  const data = await fetch(url, options)
-    .then((response) => response.json())
-    .catch((error) => error);
+// GET-verzoek
+async function fetchData(url) {
+  const response = await fetch(url, options);
+  const data = await response.json();
+  return data;
+}
+
+// POST-verzoek
+async function postData(url, body) {
+  const postOptions = {
+    ...options,
+    method: "POST",
+    body: JSON.stringify(body)
+  };
+
+  const response = await fetch(url, postOptions);
+  const data = await response.json();
   return data;
 }
 
@@ -54,8 +65,8 @@ app.use(express.static("public"));
 //route index
 // index
 app.get("/", async (request, response) => {
-  const employeesData = await dataFetch(url);
-  const punchesData = await dataFetch(punchesUrl);
+  const employeesData = await fetchData(url);
+  const punchesData = await fetchData(punchesUrl);
 
   console.log(employeesData);
   console.log(punchesData);
@@ -67,7 +78,7 @@ app.get("/", async (request, response) => {
 app.post("/clockin", async (request, response) => {
   const { employeeId, departmentId } = request.body;
 
-  const clockInData = await postJson(clockinUrl, {
+  const clockInData = await postData(clockinUrl, {
     employee_id: employeeId,
     department_id: departmentId
   });
@@ -82,7 +93,7 @@ app.post("/clockin", async (request, response) => {
 app.post("/clockout", async (request, response) => {
   const { employeeId, departmentId } = request.body;
 
-  const clockOutData = await postJson(clockoutUrl, {
+  const clockOutData = await postData(clockoutUrl, {
     employee_id: employeeId,
     department_id: departmentId
   });
@@ -108,17 +119,3 @@ app.listen(app.get("port"), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get("port")}`);
 });
-
-
-// post
-
-export async function postJson(url, body) {
-  return await fetch(url, {
-    method: "post",
-    body: JSON.stringify(body),
-    headers: { "Content-Type": "application/json" },
-  })
-    .then((response) => response.json())
-    .catch((error) => error);
-}
-
