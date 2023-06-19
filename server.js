@@ -51,16 +51,49 @@ app.use(express.static("public"));
 
 
 
-
-// Maak een route voor de index
+//route index
 // index
-app.get("/", (request, response) => {
-  console.log(request.query.employees);
-  dataFetch(url).then((data) => {
-    console.log(data)
-    response.render("index",{employee:data});
-  });
+app.get("/", async (request, response) => {
+  const employeesData = await dataFetch(url);
+  const punchesData = await dataFetch(punchesUrl);
+
+  console.log(employeesData);
+  console.log(punchesData);
+
+  response.render("index", { employee: employeesData, punches: punchesData });
 });
+
+// Clock in
+app.post("/clockin", async (request, response) => {
+  const { employeeId, departmentId } = request.body;
+
+  const clockInData = await postJson(clockinUrl, {
+    employee_id: employeeId,
+    department_id: departmentId
+  });
+
+  console.log(clockInData);
+
+  // Stuur een reactie terug naar de client, bijvoorbeeld een succesmelding
+  response.json({ message: "Clock in successful" });
+});
+
+// Clock out
+app.post("/clockout", async (request, response) => {
+  const { employeeId, departmentId } = request.body;
+
+  const clockOutData = await postJson(clockoutUrl, {
+    employee_id: employeeId,
+    department_id: departmentId
+  });
+
+  console.log(clockOutData);
+
+  // Stuur een reactie terug naar de client, bijvoorbeeld een succesmelding
+  response.json({ message: "Clock out successful" });
+});
+
+
 
 
 // voor het posten moet ik de employee_id en department_id(#departmentnummer) meegeven

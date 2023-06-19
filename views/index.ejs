@@ -33,15 +33,36 @@
       <% }) %>
      </div>
      <div class="form-wrapper">
-        <form action="/" method="POST">
-  <label for="employeeId">Employee ID:</label>
-  <input type="text" id="employeeId" name="employeeId" required>
+  <!-- Clock-in form -->
+<form action="/clockin" method="post">
+  <label for="employeeId">Employee:</label>
+  <select id="employeeId" name="employeeId" required>
+    <% employee.forEach((employee) => { %>
+      <option value="<%= employee.id %>"><%= employee.first_name %> <%= employee.last_name %></option>
+    <% }); %>
+  </select>
 
   <label for="departmentId">Department ID:</label>
   <input type="text" id="departmentId" name="departmentId" required>
 
-  <button type="submit">Submit</button>
+  <button type="submit">Clock In</button>
 </form>
+
+<!-- Clock-out form -->
+<form action="/clockout" method="post">
+  <label for="employeeId">Employee:</label>
+  <select id="employeeId" name="employeeId" required>
+    <% employee.forEach((employee) => { %>
+      <option value="<%= employee.id %>"><%= employee.first_name %> <%= employee.last_name %></option>
+    <% }); %>
+  </select>
+
+  <label for="departmentId">Department ID:</label>
+  <input type="text" id="departmentId" name="departmentId" required>
+
+  <button type="submit">Clock Out</button>
+</form>
+
      </div>
   </section> 
 
