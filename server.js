@@ -12,8 +12,8 @@ const baseUrl = "https://api.werktijden.nl/2"
 // get info form api
 const url = `${baseUrl}/employees`;
 
-// Url voor ophalen alle clock ins/outs
-const punchesUrl = await dataFetch(`https://api.werktijden.nl/2/timeclock/punches?departmentId=98759&start=${start}&end=${end}`);
+// om inkloktijden op te vragen
+const punchesUrl =  `${baseUrl}/timeclock/punches`;
 
 // voor posten van inkloktijden
 const clockinUrl = `${baseUrl}/timeclock/clockin`;
