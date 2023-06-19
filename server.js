@@ -74,6 +74,7 @@ app.get("/", async (request, response) => {
   response.render("index", { employee: employeesData, punches: punchesData });
 });
 
+
 // Clock in
 app.post("/clockin", async (request, response) => {
   const { employeeId, departmentId } = request.body;
@@ -82,21 +83,9 @@ app.post("/clockin", async (request, response) => {
     employee_id: employeeId,
     department_id: departmentId
   });
-
-  if (clockInData.errors) {
-    const { departmentId: departmentError, start: startError, end: endError } = clockInData.errors;
-    response.render("index", {
-      clockInData: null,
-      clockOutData: null,
-      clockInError: departmentError[0] || "",
-      clockOutError: "",
-      startError: startError[0] || "",
-      endError: endError[0] || ""
-    });
-  } else {
     console.log(clockInData);
     response.redirect("/");
-  }
+
 });
 
 // Clock out
@@ -107,21 +96,9 @@ app.post("/clockout", async (request, response) => {
     employee_id: employeeId,
     department_id: departmentId
   });
-
-  if (clockOutData.errors) {
-    const { departmentId: departmentError, start: startError, end: endError } = clockOutData.errors;
-    response.render("index", {
-      clockInData: null,
-      clockOutData: null,
-      clockInError: "",
-      clockOutError: departmentError[0] || "",
-      startError: startError[0] || "",
-      endError: endError[0] || ""
-    });
-  } else {
     console.log(clockOutData);
     response.redirect("/");
-  }
+
 });
 
 

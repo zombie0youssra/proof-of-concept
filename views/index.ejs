@@ -18,21 +18,22 @@
 
 
      
-  <section class="wrapper">
-    <div class="card-wrapper">
-      <% employee.forEach(employee=> { %>
-        <div class="employee-card">
-          <img src="<%= employee.avatar%>" alt="<%= employee.name %> profielfoto">
-          <div class="stripe">
-          </div>
-           <div class="inside-card">
-             <h2><%= employee.first_name +" "+ employee.last_name %></h2>
-             <p>Ingeklokt op: <%- employee.timestamp %> </p>
+<div class="card-wrapper">
+  <% employee.forEach((employee) => { %>
+    <div class="employee-card <%= (employee.type === 'clock_out') ? 'out' : '' %>">
+      <img src="<%= employee.avatar %>" alt="<%= employee.name %> profielfoto">
+      <div class="stripe"></div>
+      <div class="inside-card">
+        <h2><%= employee.first_name %> <%= employee.last_name %></h2>
+        <p>Ingeklokt op: <%= employee.timestamp %></p>
+      </div>
+    </div>
+  <% }) %>
+</div>
 
-          </div>
-        </div> 
-      <% }) %>
-     </div>
+
+
+
      <div class="form-wrapper">
   <!-- Clock-in form -->
 <form action="/clockin" method="post">
