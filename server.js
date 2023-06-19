@@ -12,8 +12,8 @@ const baseUrl = "https://api.werktijden.nl/2"
 // get info form api
 const url = `${baseUrl}/employees`;
 
-// om inkloktijden op te vragen
-const punchesUrl =  `${baseUrl}/timeclock/punches`;
+// Url voor ophalen alle clock ins/outs
+const punchesUrl = await dataFetch(`https://api.werktijden.nl/2/timeclock/punches?departmentId=98759&start=${start}&end=${end}`);
 
 // voor posten van inkloktijden
 const clockinUrl = `${baseUrl}/timeclock/clockin`;
@@ -61,7 +61,9 @@ app.get("/", (request, response) => {
     response.render("index",{employee:data});
   });
 });
- 
+
+
+// voor het posten moet ik de employee_id en department_id(#departmentnummer) meegeven
 // index post functie voor inklokken en uitklokken van medewerkers
 
 
@@ -75,11 +77,10 @@ app.listen(app.get("port"), function () {
 });
 
 
-// post json
-// clockin
-// voor het posten moet ik de employee_id en department_id(#departmentnummer)
-export async function postJson(clockinUrl, body) {
-  return await fetch(clockinUrl, {
+// post
+
+export async function postJson(url, body) {
+  return await fetch(url, {
     method: "post",
     body: JSON.stringify(body),
     headers: { "Content-Type": "application/json" },
