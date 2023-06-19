@@ -32,9 +32,16 @@
         </div> 
       <% }) %>
      </div>
-     <div class="button-wrapper">
-     <button>Inklokken</button>
-     <button>Medewerkers</button>
+     <div class="form-wrapper">
+        <form action="/" method="POST">
+  <label for="employeeId">Employee ID:</label>
+  <input type="text" id="employeeId" name="employeeId" required>
+
+  <label for="departmentId">Department ID:</label>
+  <input type="text" id="departmentId" name="departmentId" required>
+
+  <button type="submit">Submit</button>
+</form>
      </div>
   </section> 
 

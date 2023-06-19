@@ -184,8 +184,9 @@ main{
 .stripe{
     position: relative;
     top: 1em;
-    width: 2px;
+    width: 3px;
     height: 80px;
+    border-radius: 1px;
     background-color: rgb(21, 140, 67);
 }
 
