@@ -2,6 +2,9 @@
 import { render } from "ejs";
 import express, { response } from "express";
 import "dotenv/config";
+import { format, formatISO, add, differenceInMinutes, differenceInHours } from "date-fns"
+import { utcToZonedTime } from "date-fns-tz"
+
 
 // Maak een nieuwe express app aan
 const app = express();
@@ -12,8 +15,18 @@ const baseUrl = "https://api.werktijden.nl/2"
 // get info form api
 const url = `${baseUrl}/employees`;
 
+// Haal de datum van vandaag op om alleen de punches van vandaag te laten zien:
+const date = new Date()
+const timeZone = 'Europe/Amsterdam'
+const zonedDate = utcToZonedTime(date, timeZone)
+const start = formatISO(new Date(zonedDate), { representation: 'date' })
+const end = formatISO(add(new Date(zonedDate), { days: 1 }), { representation: 'date' })
+
+const today = format(utcToZonedTime(date, timeZone), 'd-L-y')
+
+
 // om inkloktijden op te vragen
-const punchesUrl =  `${baseUrl}/timeclock/punches`;
+const punchesUrl =  `${baseUrl}/timeclock/punches?departmentId=98759&start=${start}&end=${end}`;
 
 // voor posten van inkloktijden
 const clockinUrl = `${baseUrl}/timeclock/clockin`;
@@ -68,10 +81,10 @@ app.get("/", async (request, response) => {
   const employeesData = await fetchData(url);
   const punchesData = await fetchData(punchesUrl);
 
-  console.log(employeesData);
-  console.log(punchesData);
+  // console.log(employeesData);
+  // console.log(punchesData.data);
 
-  response.render("index", { employee: employeesData, punches: punchesData });
+  response.render("index", { employee: employeesData, punches: punchesData.data ? punchesData.data : false });
 });
 
 

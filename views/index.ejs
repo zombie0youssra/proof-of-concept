@@ -25,7 +25,13 @@
       <div class="stripe"></div>
       <div class="inside-card">
         <h2><%= employee.first_name %> <%= employee.last_name %></h2>
-        <p>Ingeklokt op: <%= employee.timestamp %></p>
+        <% if (punches) { %>
+          <% const activeEmployeeTime = [...punches].filter(timePunch => timePunch.employee_id == employee.id) %>
+          <% console.log(activeEmployeeTime) %>
+          <% if(activeEmployeeTime.length) { %>
+            <p>Ingeklokt op: <%= activeEmployeeTime[0].timestamp %></p>
+          <% } %>
+        <% } %>
       </div>
     </div>
   <% }) %>
