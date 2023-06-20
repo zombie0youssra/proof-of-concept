@@ -21,7 +21,7 @@
 <div class="card-wrapper">
   <% employee.forEach((employee) => { %>
     <div class="employee-card <%= (employee.type === 'clock_out') ? 'out' : '' %>">
-  <img src="<%= employee.avatar %>" alt="<%= employee.name %> profielfoto">
+  <img src="<%= employee.avatar %>" alt="<%= employee.name %> profielfoto" loading="lazy">
   <div class="stripe"></div>
   <div class="inside-card">
     <h2><%= employee.first_name %> <%= employee.last_name %></h2>
