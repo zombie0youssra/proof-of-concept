@@ -21,19 +21,25 @@
 <div class="card-wrapper">
   <% employee.forEach((employee) => { %>
     <div class="employee-card <%= (employee.type === 'clock_out') ? 'out' : '' %>">
-      <img src="<%= employee.avatar %>" alt="<%= employee.name %> profielfoto">
-      <div class="stripe"></div>
-      <div class="inside-card">
-        <h2><%= employee.first_name %> <%= employee.last_name %></h2>
-        <% if (punches) { %>
-          <% const activeEmployeeTime = [...punches].filter(timePunch => timePunch.employee_id == employee.id) %>
-          <% console.log(activeEmployeeTime) %>
-          <% if(activeEmployeeTime.length) { %>
-            <p>Ingeklokt op: <%= activeEmployeeTime[0].timestamp %></p>
-          <% } %>
+  <img src="<%= employee.avatar %>" alt="<%= employee.name %> profielfoto">
+  <div class="stripe"></div>
+  <div class="inside-card">
+    <h2><%= employee.first_name %> <%= employee.last_name %></h2>
+    <% if (punches) { %>
+      <% const activeEmployeeTime = [...punches].filter(timePunch => timePunch.employee_id == employee.id) %>
+      <% console.log(activeEmployeeTime) %>
+      <% if(activeEmployeeTime.length) { %>
+        <p>Ingeklokt op: <%= activeEmployeeTime[0].timestamp %></p>
+        <% if (employee.type === 'clock_in') { %>
+          <button class="clock-out-button" data-employee-id="<%= employee.id %>">Clock Out</button>
+          <p>Uitgeklokt op: <span id="clockOutTime-<%= employee.id %>"></span></p>
+        <% } else if (employee.type === 'clock_out') { %>
+          <p>Uitgeklokt op: <%= activeEmployeeTime[0].timestamp %></p>
         <% } %>
-      </div>
-    </div>
+      <% } %>
+    <% } %>
+  </div>
+</div>
   <% }) %>
 </div>
 

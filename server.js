@@ -86,6 +86,24 @@ app.get("/", async (request, response) => {
 
   response.render("index", { employee: employeesData, punches: punchesData.data ? punchesData.data : false });
 });
+// GET-verzoek voor het ophalen van de recente uitkloktijd
+app.get("/clockout/:employeeId", async (request, response) => {
+  const { employeeId } = request.params;
+  const recentClockOutData = await fetchData(`/clockout/${employeeId}`);
+  const recentClockOutTime = recentClockOutData.timestamp;
+
+  response.send(recentClockOutTime);
+});
+
+//  GET-verzoek voor het ophalen van de recente inkloktijd
+app.get("/clockin/:employeeId", async (request, response) => {
+  const { employeeId } = request.params;
+  const recentClockInData = await fetchData(`/clockin/${employeeId}`);
+  const recentClockInTime = recentClockInData.timestamp;
+
+  response.send(recentClockInTime);
+});
+
 
 
 // Clock in
