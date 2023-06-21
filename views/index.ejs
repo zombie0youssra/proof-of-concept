@@ -26,15 +26,19 @@
   <div class="stripe"></div>
   <div class="inside-card">
     <h2><%= employee.first_name %> <%= employee.last_name %></h2>
+
     <% if (punches) { %>
       <% const activeEmployeeTime = [...punches].filter(timePunch => timePunch.employee_id == employee.id) %>
       <% console.log(activeEmployeeTime) %>
+
       <% if(activeEmployeeTime.length) { %>
         <p><%= activeEmployeeTime[0].created_at %></p>
+
         <% if (employee.type === 'clock_in') { %>
           <button class="clock-out-button" data-employee-id="<%= employee.id %>">Clock Out</button>
           <p><span id="clockOutTime-<%= employee.id %>"></span></p>
-        <% } else if (employee.type === 'clock_out') { %>
+        <% } 
+        else if (employee.type === 'clock_out') { %>
           <p><%= activeEmployeeTime[0].updated_at %></p>
         <% } %>
       <% } %>
