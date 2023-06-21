@@ -48,15 +48,11 @@
   <% }) %>
 </div>
 
+<button id="clockinButton">Inklokken</button>
 
-
-
-     <div class="form-wrapper">
-
-      
-      <!-- Clock-in form -->
-      
-<form action="/clockin" method="post">
+<div id="clockinPopup" class="popup">
+  <div class="popup-content">
+    <form action="/clockin" method="post">
   <label for="employeeId">Employee:</label>
   <select id="employeeId" name="employeeId" required>
     <% employee.forEach((employee) => { %>
@@ -69,7 +65,13 @@
 
   <button type="submit">Clock In</button>
 </form>
+  </div>
+</div>
 
+<button id="clockoutButton">Uitklokken</button>
+
+<div id="clockoutPopup" class="popup">
+  <div class="popup-content">
 <!-- Clock-out form -->
 <form action="/clockout" method="post">
   <label for="employeeId">Employee:</label>
@@ -82,10 +84,11 @@
   <input type="text" id="departmentId" name="departmentId" required>
 
   <button type="submit">Clock Out</button>
-</form>
+  </form>
+  </div>
+</div>
 
-     </div>
-  </section> 
+</section> 
 
 
 
