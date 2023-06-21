@@ -24,12 +24,12 @@ header{
     background-color: var(--primary);
     display: flex;
     flex-direction: row;
-    height: 3em;
+    height: 3.5em;
     align-items: center;
 }
 
 header img{
-    height: 24px;
+    height: 27px;
     width: auto;
 }
 .menu{

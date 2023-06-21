@@ -81,6 +81,8 @@ app.get("/", async (request, response) => {
   const employeesData = await fetchData(url);
   const punchesData = await fetchData(punchesUrl);
 
+  console.log(punchesData)
+
   // console.log(employeesData);
   // console.log(punchesData.data);
 
