@@ -19,14 +19,21 @@ body{
     margin: 0;
     font-family: Helvetica ;
 }
+
 header{
     background-color: var(--primary);
     display: flex;
     flex-direction: row;
+    height: 3em;
+    align-items: center;
 }
 
+header img{
+    height: 24px;
+    width: auto;
+}
 .menu{
-    display: flex;
+    display: none;
     flex-direction: row;
 }
 
