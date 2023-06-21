@@ -29,12 +29,12 @@
       <% const activeEmployeeTime = [...punches].filter(timePunch => timePunch.employee_id == employee.id) %>
       <% console.log(activeEmployeeTime) %>
       <% if(activeEmployeeTime.length) { %>
-        <p>Ingeklokt op: <%= activeEmployeeTime[0].timestamp %></p>
+        <p><%= activeEmployeeTime[0].created_at %></p>
         <% if (employee.type === 'clock_in') { %>
           <button class="clock-out-button" data-employee-id="<%= employee.id %>">Clock Out</button>
-          <p>Uitgeklokt op: <span id="clockOutTime-<%= employee.id %>"></span></p>
+          <p><span id="clockOutTime-<%= employee.id %>"></span></p>
         <% } else if (employee.type === 'clock_out') { %>
-          <p>Uitgeklokt op: <%= activeEmployeeTime[0].timestamp %></p>
+          <p><%= activeEmployeeTime[0].updated_at %></p>
         <% } %>
       <% } %>
     <% } %>
