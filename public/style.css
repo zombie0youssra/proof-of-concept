@@ -60,6 +60,7 @@ main{
 }
 
 /* button */
+
 .afdeling-wrapper{
     display: flex;
     flex-direction: column;
@@ -67,103 +68,79 @@ main{
     margin-bottom: 2em;
     margin-top: 1em;
 }
-.toggler {
-    align-items: center;
+
+.view-button {
+    display: flex;
 }
 
-.toggler input {
-    display: none;
-}
-
-.toggler label {
-    display: block;
+.color-switch {
+    display: flex;
     position: relative;
-    width: 10em;
-    height: 36px;
-    border: 1px solid var(--light-border);
-    border-radius: var(--container-radius);
-    background: var(--main-bg);
-    cursor: pointer;
+    margin: 0px;
 }
 
-.toggler label::after {
+.color-switch>label.switch-inner {
+    margin: 0px;
+    width: 11rem;
+    height: 2rem;
+    background: var(--light-border);
+    border-radius: var(--btn-radius);
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
     display: block;
-    border-radius: 100%;
-    background-color: var(--primary);
-    content: 'in';
-    color: var(--primary-text);
-    animation-name: toggler-size;
-    animation-duration: 0.15s;
-    animation-timing-function: ease-out;
-    animation-direction: forwards;
-    animation-iteration-count: 1;
-    animation-play-state: running;
+    box-shadow: var(--container-shadow);
 }
 
-.toggler label::after,
-.toggler label .toggler-on,
-.toggler label .toggler-off {
+.color-switch>label.switch-inner:before {
+    content: attr(data-on);
     position: absolute;
-    top: 50%;
-    left: 25%;
-    width: 26px;
-    height: 26px;
-    transform: translateY(-50%) translateX(-50%);
-    transition: left 0.15s ease-in-out, background-color 0.2s ease-out, width 0.15s ease-in-out, height 0.15s ease-in-out, opacity 0.15s ease-in-out;
+    font-size: 0.8rem;
+    font-weight: 500;
+    top: 7px;
+    right: 0;
+    width: 5.5rem;
+    text-align: center;
 }
 
-.toggler input:checked+label::after,
-.toggler input:checked+label .toggler-on,
-.toggler input:checked+label .toggler-off {
-    left: 75%;
-}
-
-.toggler input:checked+label::after {
-    background-color: var(--secondary);
-    animation-name: toggler-size2;
-    content: 'uit';
+.color-switch>label.switch-inner:after {
+    content: attr(data-off);
+    font-size: 0.9rem;
+    width: 5.5rem;
+    height: 22px;
+    background: var(--primary);
     color: var(--primary-text);
+    border-radius: var(--btn-radius);
+    position: absolute;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0px 0px 6px -2px #111;
+    padding: 5px 0px;
+    left: 0;
+    top: 0;
 }
 
-.toggler .toggler-on,
-.toggler .toggler-off {
-    opacity: 1;
-    z-index: 2;
-}
-
-.toggler input:checked+label .toggler-off,
-.toggler input:not(:checked)+label .toggler-on {
-    width: 0;
-    height: 0;
+.color-switch input[type="checkbox"] {
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
     opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    margin: 0px;
 }
 
-@keyframes toggler-size {
-
-    0%,
-    100% {
-        width: 26px;
-        height: 26px;
-    }
-
-    50% {
-        width: 20px;
-        height: 20px;
-    }
+.color-switch input[type="checkbox"]:checked+label.switch-inner:after {
+    content: attr(data-on);
+    left: 50%;
+    background: var(--light-text);
 }
 
-@keyframes toggler-size2 {
-
-    0%,
-    100% {
-        width: 26px;
-        height: 26px;
-    }
-
-    50% {
-        width: 20px;
-        height: 20px;
-    }
+.color-switch input[type="checkbox"]:checked+label.switch-inner:before {
+    content: attr(data-off);
+    right: auto;
+    left: 0;
 }
 
 
@@ -192,22 +169,30 @@ main{
     position: relative;
     top: 1em;
     width: 3px;
-    height: 80px;
+    height: 60px;
     border-radius: 1px;
     background-color: rgb(21, 140, 67);
 }
 
 
 .employee-card img{
-    height: 100px;
+    height: 75px;
     width: auto;
     margin-top: 0.5em;
     margin-bottom: 1em;
     margin-left: 1em;
+    border: 3px solid #059669 ;
+    border-radius: 100%;
 }
 
 .inside-card{
     display: inline;
+}
+
+.inside-card h2{
+    color: var(--light-text);
+    font-size: 20px;
+    font-weight: 200;
 }
 
 .button-wrapper{
