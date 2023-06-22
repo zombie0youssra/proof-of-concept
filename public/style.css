@@ -55,7 +55,7 @@ header img{
 main{
     padding: 2em;
     display: flex;
-    margin-top: 2em;
+    margin-top: 0.5em;
     flex-direction: column;
 }
 
@@ -65,7 +65,7 @@ main{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     margin-top: 1em;
 }
 
@@ -195,7 +195,31 @@ main{
     font-weight: 200;
 }
 
+#clockinButton{
+    font-size: 17px;
+    background-color:var(--primary);
+    align-self: center;
+    width: 10em;
+    color: var(--primary-text);
+    border-radius: var(--container-radius);
+    border: none;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+#clockoutButton{
+    font-size: 17px;
+    background-color: var(--primary);
+    align-self: center;
+    background-color: var(--primary);
+    width: 10em;
+    color: var(--primary-text);
+    border-radius: var(--container-radius);
+    border: none;
+}
+
 /* form */
+
 .popup {
     display: none;
     position: fixed;
@@ -209,6 +233,28 @@ main{
 }
 
 .popup-content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
     background-color: #f9f9f9;
+    width: 20em;
+    height: 20em;
     padding: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.popup-content input{
+    margin-top: 1em;
+}
+
+.popup-content label{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.popup-content button{
+    background-color: var(--primary);
+    border-radius: var(--container-bg);
+    border: var(--container-bg) ;
 }
