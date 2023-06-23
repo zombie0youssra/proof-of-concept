@@ -73,7 +73,6 @@ Om de api te gebruiken heb ik een api-token gekregen deze token zit in een .env 
 
 ## Bronnen
 
-
 ## Licentie
 
 This project is licensed under the terms of the [MIT license](./LICENSE).
