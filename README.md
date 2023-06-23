@@ -30,7 +30,7 @@ form voor inklokken
 
 <img width="771" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/6251628e-f4ca-4a6c-a844-5d1153f1ad95">
 
-data wordt daarna wordt data geupdate
+data wordt daarna wordt geupdate en getoond
 
 <img width="796" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/a132ef0c-a1f4-4253-959b-0a3a97630cfd">
 
