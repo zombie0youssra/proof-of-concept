@@ -38,6 +38,7 @@ data wordt daarna wordt data geupdate
 
 ### data
 ik heb de api van werktijden gerbuikt dit kon ik gerbuiken door een api token aan tevragen op mijn proef werktijdenprofiel.
+
 <img width="602" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/7afa017e-4362-4538-8e0c-c207068d13cc">
 
 ## Kenmerken
@@ -66,6 +67,9 @@ ik heb de api van werktijden gerbuikt dit kon ik gerbuiken door een api token aa
 5. Daarna door gerbruik van `npm start` kan je je code live zien in de localhost.
 6. gebruik `gitignore` voor de modules zodat het niet allemaal op github komt te staan.
 7. Live zetten van je project kan met behulp van adaptable.io.
+
+## .env
+Om de api te gebruiken heb ik een api-token gekregen deze token zit in een .env file.
 
 ## Bronnen
 
