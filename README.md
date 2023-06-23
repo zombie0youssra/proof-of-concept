@@ -26,9 +26,12 @@ Een web applicatie voor werkgevers en werknemers om  in en uit te klokken.
 we moeten een aanwezigheidsbordwebapp maken en waargebruikers (de werkgever) kunnenin-enuitklokken.
 
 ### inklokken en uitklokken
-- form voor inklokken
+form voor inklokken
+
 <img width="771" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/6251628e-f4ca-4a6c-a844-5d1153f1ad95">
-- data wordt daarna wordt data geupdate
+
+data wordt daarna wordt data geupdate
+
 <img width="796" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/a132ef0c-a1f4-4253-959b-0a3a97630cfd">
 
 
