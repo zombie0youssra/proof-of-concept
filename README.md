@@ -16,15 +16,20 @@ Een web applicatie voor werkgevers en werknemers om  in en uit te klokken.
 ## Beschrijving
 <!-- Bij Beschrijving staat kort beschreven wat voor project het is en wat je hebt gemaakt -->
 <!-- Voeg een mooie poster visual toe 📸 -->
+<img width="836" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/005d0845-13eb-4ecc-a75e-cfb275a2b90a">
+
 <!-- Voeg een link toe naar Github Pages 🌐-->
 
 ## Gebruik
 <!-- Bij Gebruik staat de user story, hoe het werkt en wat je er mee kan. -->
 ### userstory
+we moeten een aanwezigheidsbordwebapp maken en waargebruikers (de werkgever) kunnenin-enuitklokken.
 
 ### inklokken
 
 ### data
+ik heb de api van werktijden gerbuikt dit kon ik gerbuiken door een api token aan tevragen op mijn proef werktijdenprofiel.
+<img width="602" alt="image" src="https://github.com/zombie0youssra/proof-of-concept/assets/112857270/7afa017e-4362-4538-8e0c-c207068d13cc">
 
 ## Kenmerken
 <!-- Bij Kenmerken staat welke technieken zijn gebruikt en hoe. Wat is de HTML structuur? Wat zijn de belangrijkste dingen in CSS? Wat is er met JS gedaan en hoe? Misschien heb je iets met NodeJS gedaan, of heb je een framwork of library gebruikt? -->
@@ -32,7 +37,7 @@ Een web applicatie voor werkgevers en werknemers om  in en uit te klokken.
 - figma
 - goodnotes
 - visuel studio code
-- polyplane
+- werktijden.nl
 
 ### gebruikte technieken 🍟
 - ejs
