@@ -69,7 +69,7 @@ Ik heb de api van werktijden gerbuikt dit kon ik gerbuiken door een api token aa
 7. Live zetten van je project kan met behulp van adaptable.io.
 
 ## .env
-Om de api te gebruiken heb ik een api-token gekregen deze token zit in een .env file.
+de api-token zit in een .env file
 
 ## Bronnen
 
